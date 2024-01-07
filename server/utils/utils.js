@@ -1,7 +1,8 @@
 "use strict";
 const axios = require("axios");
 const serverAuth = require("../../bin/config").serverAuth;
-
+const responseCode = require("../utils/response-code");
+const responseMessage = require("../utils/response-message");
 module.exports = class utils {
   constructor() {}
 
@@ -100,5 +101,105 @@ module.exports = class utils {
         throw new Error(error.message);
       }
     }
+  }
+  static errorMessage(details) {
+    let res = this.responseFormat(responseCode.INVALID_REQUEST_PARAMS);
+    res.message = responseMessage[res.code];
+    if (details.type == "string.regex.base") {
+      res.message = `${details.context.key} is invalid.`;
+      res.data = {
+        isJoi: true,
+        key: details.context.key,
+      };
+    }
+    if (details.type == "any.required") {
+      res.message = `${details.context.key} is required.`;
+      res.data = {
+        isJoi: true,
+        key: details.context.key,
+      };
+    }
+    if (details.type == "number.base") {
+      res.message = `${details.context.key} is invalid.`;
+      res.data = {
+        isJoi: true,
+        key: details.context.key,
+      };
+    }
+    if (details.type == "string.base") {
+      res.message = `${details.context.key} is invalid.`;
+      res.data = {
+        isJoi: true,
+        key: details.context.key,
+      };
+    }
+    if (details.type == "any.allowOnly") {
+      res.message = `${details.context.key} is invalid.`;
+      res.data = {
+        isJoi: true,
+        key: details.context.key,
+      };
+    }
+
+    if (details.type == "string.regex.invert.base") {
+      res.message = `${details.context.key} must match pattern.`;
+      res.data = {
+        isJoi: true,
+        key: details.context.key,
+      };
+    }
+
+    if (details.type == "string.min") {
+      res.message = `${details.context.key} length must be at least ${details.context.limit} characters long.`;
+      res.data = {
+        isJoi: true,
+        key: details.context.key,
+      };
+    }
+    if (details.type == "string.max") {
+      res.message = `${details.context.key} length must be less than or equal to ${details.context.limit} characters long.`;
+      res.data = {
+        isJoi: true,
+        key: details.context.key,
+      };
+    }
+
+    if (details.type == "object.allowUnknown") {
+      res.message = `${details.context.key} is not allowed.`;
+      res.data = {
+        isJoi: true,
+        key: details.context.key,
+      };
+    }
+
+    if (details.type == "string.length") {
+      res.message = `${details.context.key} length must be ${details.context.limit} characters long.`;
+      res.data = {
+        isJoi: true,
+        key: details.context.key,
+      };
+    }
+    if (details.type == "number.greater") {
+      res.message = `${details.context.key} must be greater`;
+      res.data = {
+        isJoi: true,
+        key: details.context.key,
+      };
+    }
+    return res;
+  }
+
+  static response(code, data, message) {
+    let returnObj = { code: code };
+    if (message) {
+      returnObj.message = message;
+    } else {
+      returnObj.message = responseMessage[code];
+    }
+    if (data) {
+      returnObj.data = data;
+    }
+
+    return returnObj;
   }
 };

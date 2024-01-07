@@ -1,10 +1,10 @@
-const vehicleTemplateInfos = require("../communication/models/vehicle_templates");
+const vehicleDto = require("../communication/models/vehicle_templates");
 const MongoDao = require("./mongo-dao");
 
-class vehicleTemplateInfos extends MongoDao {
+class vehicleTemplateDto extends MongoDao {
   constructor() {
-    super(vehicleTemplateInfos);
+    super(vehicleDto);
   }
 }
 
-module.exports = new vehicleTemplateInfos();
+module.exports = new vehicleTemplateDto();

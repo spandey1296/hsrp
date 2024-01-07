@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 
 const vehicleTemplateSchema = new mongoose.Schema(
   {
-    plateNumber: Number,
+    plateNumber: String,
     state: String,
-    vehicleNumber: Number,
+    vehicleNumber: String,
     name: String,
     mobile: Number,
     emailId: String,

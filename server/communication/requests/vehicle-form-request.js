@@ -13,9 +13,10 @@ module.exports = async (request, response, next) => {
     emailId: Joi.string().required(),
   });
   try {
-    request.body = await Joi.validate(request.body, extendedSchema);
+    request.body = await Joi.validate(request.body, baseSchema);
     next();
   } catch (error) {
+    console.log(error, "error..", error.details);
     response.json(Util.errorMessage(error.details[0]));
   }
 };

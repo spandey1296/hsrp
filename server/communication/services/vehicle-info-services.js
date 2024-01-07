@@ -1,20 +1,19 @@
 "use strict";
-const { emailTemplateDao } = require("../../dao-manager");
+const { vehicleTemplateDao } = require("../../dao-manager");
 const responseCode = require("../../utils/response-code");
 const path = require("path");
 
 const utils = require("../../utils/utils");
 const config = require("../../../bin/config");
 
-const vehicleInfos = async (requestObject) => {
+const vehicleInfo = async (requestObject) => {
   let responseObject = {
     code: responseCode.SUCCESS,
     data: {},
     message: "",
   };
   try {
-    let query = {};
-    console.log(requestObject, "requestObject.....");
+     await vehicleTemplateDao.insert(requestObject);
   } catch (error) {
     console.error({
       err: error,
@@ -27,4 +26,4 @@ const vehicleInfos = async (requestObject) => {
   return responseObject;
 };
 
-module.exports = vehicleInfos;
+module.exports = vehicleInfo;

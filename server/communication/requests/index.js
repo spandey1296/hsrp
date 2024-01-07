@@ -3,5 +3,5 @@
 const vehicleValidate = require("./vehicle-form-request");
 
 module.exports = {
-  vehicleValidate
+  vehicleValidate,
 };
