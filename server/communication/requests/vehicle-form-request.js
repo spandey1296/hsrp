@@ -5,11 +5,11 @@ const Joi = require("@hapi/joi");
 
 module.exports = async (request, response, next) => {
   const baseSchema = Joi.object().keys({
-    plateNumber: Joi.number().required(),
+    plateNumber: Joi.string().required(),
     state: Joi.string().required(),
-    vehicleNumber: Joi.number().required(),
+    vehicleNumber: Joi.string().required(),
     name: Joi.string().required(),
-    mobile: Joi.number().required(),
+    mobile: Joi.string().required(),
     emailId: Joi.string().required(),
   });
   try {

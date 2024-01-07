@@ -8,6 +8,7 @@ var express = require("express");
 var router = require("./server/routes/index");
 const helmet = require("helmet");
 const noCache = require("nocache");
+var cors = require("cors");
 
 var app = express();
 
@@ -15,8 +16,7 @@ var compression = require("compression");
 app.use(compression());
 app.use(helmet());
 app.use(noCache());
-
-
+app.use(cors());
 
 app.use(express.json({ limit: "20mb" }));
 app.use(

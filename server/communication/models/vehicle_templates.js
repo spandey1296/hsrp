@@ -7,7 +7,7 @@ const vehicleTemplateSchema = new mongoose.Schema(
     state: String,
     vehicleNumber: String,
     name: String,
-    mobile: Number,
+    mobile: String,
     emailId: String,
   },
   {
