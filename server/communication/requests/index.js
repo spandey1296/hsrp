@@ -1,7 +1,7 @@
 "use strict";
 
-const sendEmail = require("./send-email-request");
+const vehicleValidate = require("./vehicle-form-request");
 
 module.exports = {
-  sendEmail,
+  vehicleValidate
 };

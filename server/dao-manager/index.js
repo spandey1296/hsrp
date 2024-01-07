@@ -1,7 +1,7 @@
 "use strict";
 
-const emailTemplateDao = require("./email-template-mongo-dao");
+const vehicleTemplateDao = require("./vehicle-template-mongo-dao");
 
 module.exports = {
-  emailTemplateDao,
+  vehicleTemplateDao,
 };

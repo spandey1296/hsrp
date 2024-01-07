@@ -3,8 +3,7 @@
 const communication = require("../communication");
 
 module.exports = function (app) {
-  // app.use(auditLog)
-  app.use("/api/v1/communication", communication);
+  app.use("/api/v1/hrsp", communication);
 
   app.get("/", function (req, res, next) {
     res.json({ greet: "Hello World" });

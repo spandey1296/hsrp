@@ -1,10 +1,7 @@
-'use strict';
+"use strict";
 
-const sendEmail = require('./send-email-controller');
+const vehicleInfo = require("./vehicle-controller");
 
 module.exports = {
-  
-    sendEmail,
-
-   
-}
+  vehicleInfo
+};

@@ -1,7 +1,7 @@
 "use strict";
 
-const emailTemplate = require("./email_templates");
+const vehicleTemplate = require("./vehicle_templates");
 
 module.exports = {
-  emailTemplate,
+  vehicleTemplate
 };

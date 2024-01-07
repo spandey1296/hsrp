@@ -6,7 +6,7 @@ const path = require("path");
 const utils = require("../../utils/utils");
 const config = require("../../../bin/config");
 
-const sendEmailToUser = async (requestObject) => {
+const vehicleInfos = async (requestObject) => {
   let responseObject = {
     code: responseCode.SUCCESS,
     data: {},
@@ -16,9 +16,9 @@ const sendEmailToUser = async (requestObject) => {
     let query = {};
     console.log(requestObject, "requestObject.....");
   } catch (error) {
-    logger.error({
+    console.error({
       err: error,
-      methodName: "sendSmsToUser",
+      methodName: "vehicleInfos",
       fileName: path.basename(__filename),
     });
     throw error;
@@ -27,4 +27,4 @@ const sendEmailToUser = async (requestObject) => {
   return responseObject;
 };
 
-module.exports = sendEmailToUser;
+module.exports = vehicleInfos;

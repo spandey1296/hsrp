@@ -1,10 +1,7 @@
-'use strict';
+"use strict";
 
+const vehicleInfoService = require("./vehicle-info-services");
 
-const sendEmailService = require('./send-email-services');
-
-module.exports={
-   
-    sendEmailService,
-}
-  
+module.exports = {
+  vehicleInfoService,
+};
