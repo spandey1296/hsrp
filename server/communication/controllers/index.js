@@ -1,7 +1,7 @@
 "use strict";
 
-const vehicleInfo = require("./vehicle-controller");
+const vehicleTemplateController = require("./vehicle-controller");
 
 module.exports = {
-  vehicleInfo,
+  vehicleTemplateController,
 };

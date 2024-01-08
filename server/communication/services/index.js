@@ -1,7 +1,7 @@
 "use strict";
 
-const vehicleInfoService = require("./vehicle-info-services");
+const vehicleTemplateService = require("./vehicle-info-services");
 
 module.exports = {
-  vehicleInfoService,
+  vehicleTemplateService,
 };

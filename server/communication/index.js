@@ -8,7 +8,12 @@ const validate = require("./requests");
 routes.post(
   "/vehicle/upload",
   validate.vehicleValidate,
-  controller.vehicleInfo
+  controller.vehicleTemplateController.vehicleInfos
+);
+
+routes.post(
+  "/vehicle/contact-us",
+  controller.vehicleTemplateController.contactUs
 );
 
 module.exports = routes;
