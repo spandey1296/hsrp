@@ -1,6 +1,6 @@
 "use strict";
 const axios = require("axios");
-const serverAuth = require("../../bin/config").serverAuth;
+const serverAuth ="ashdjkhwqke90328hkjwqhekkehw"
 const responseCode = require("../utils/response-code");
 const responseMessage = require("../utils/response-message");
 module.exports = class utils {

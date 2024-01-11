@@ -1,5 +1,5 @@
 "use strict";
-const dburl = require("../../bin/config").mongoUrl;
+const dburl ="mongodb+srv://sk3025:4bCAMy0DtMDYVLE7@cluster0.jhfij46.mongodb.net/user_details";
 const mongoose = require("mongoose");
 const chalk = require("chalk");
 try {

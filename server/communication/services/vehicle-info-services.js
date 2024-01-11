@@ -2,8 +2,6 @@
 const { vehicleTemplateDao, contactUsDao } = require("../../dao-manager");
 const responseCode = require("../../utils/response-code");
 const path = require("path");
-const utils = require("../../utils/utils");
-const config = require("../../../bin/config");
 
 class vehicleTemplateService {
   async vehicleInfo(requestObject) {
