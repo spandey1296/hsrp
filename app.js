@@ -5,7 +5,9 @@ var cors = require("cors");
 
 var app = express();
 app.use(noCache());
-app.use(cors());
+app.use(cors({
+  origin: 'https://main.d7diq5ae732ar.amplifyapp.com/',
+}));
 
 app.use(express.json({ limit: "20mb" }));
 app.use(
